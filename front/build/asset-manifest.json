@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d1b534c1.css",
+    "main.js": "/static/js/main.3fc8dc64.js",
+    "static/js/453.22603500.chunk.js": "/static/js/453.22603500.chunk.js",
+    "static/media/startPlaying.png": "/static/media/startPlaying.67cbe003ef3eed6938a8.png",
+    "static/media/addpoints.png": "/static/media/addpoints.3539f1ddc787a328a56e.png",
+    "static/media/signup.png": "/static/media/signup.9f12c9ebc6189e7780ff.png",
+    "static/media/selectbid.png": "/static/media/selectbid.ada53c200b6a28d4a873.png",
+    "static/media/downloadApp.png": "/static/media/downloadApp.d842502f9307fe71b42d.png",
+    "static/media/lastSelectbid.png": "/static/media/lastSelectbid.5dcf54efd80a35d26436.png",
+    "static/media/addPoint2.png": "/static/media/addPoint2.44d918d95add598e1287.png",
+    "static/media/login.png": "/static/media/login.88d7de150a7695f98611.png",
+    "static/media/slide.jpg": "/static/media/slide.f98a6c8cfec57cbf0f89.jpg",
+    "static/media/coins.png": "/static/media/coins.95e57e4b4bf9b9a288ed.png",
+    "static/media/fastbetLogo.png": "/static/media/fastbetLogo.c3a51433e63afd5453d0.png",
+    "static/media/matkaImag.png": "/static/media/matkaImag.b29fe9137280dc3421cc.png",
+    "static/media/read_more.png": "/static/media/read_more.e6aa1c2fc8c10e119388.png",
+    "index.html": "/index.html",
+    "main.d1b534c1.css.map": "/static/css/main.d1b534c1.css.map",
+    "main.3fc8dc64.js.map": "/static/js/main.3fc8dc64.js.map",
+    "453.22603500.chunk.js.map": "/static/js/453.22603500.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d1b534c1.css",
+    "static/js/main.3fc8dc64.js"
+  ]
+}

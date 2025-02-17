@@ -1,0 +1,387 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+ 
+ .crash-container {
+     position: relative;
+     height: 116%;
+     width: 67%;
+     overflow: hidden;
+     margin-left: 500px;
+   }
+   
+   .outer-crash{
+     height: 100%;
+     width: 93%;
+     /* background-color:rgb(76, 81, 120); */
+     border-radius: 10px;
+     position: relative;
+     overflow: hidden;
+     background-color: aqua;
+   }
+ 
+   .animation-paused {
+     display: none;
+   }
+ 
+   .blast-animation{
+     
+   }
+ 
+ 
+ 
+   .mountains {
+     height: 300px;
+     width: 110%;
+     
+     /* position: absolute;
+     bottom: 0; */
+     
+     display: flex;
+     overflow: hidden;
+   }
+    
+   .mountain {
+     object-fit: cover;
+     height: 100%;
+     flex-shrink: 0;
+     width: 800px;
+     animation: mountain-move 8s linear infinite;
+   }
+ 
+   .paused {
+     animation-play-state: paused;
+   }
+   
+   .crash {
+     height: 85%;
+     width: 100%;
+     /* position: absolute; */
+     background-color: rgb(24, 28, 58);
+     top: 18px;
+     right: 30px;
+     /* margin-left: 40px; */
+     border-bottom: 1px solid white;
+     overflow: hidden;
+   }
+ 
+   @keyframes mountain-move {
+     0% {
+       transform: translateX(0);
+     }
+     100% {
+       transform: translateX(-800px);
+     }
+   }
+ 
+   .countdown-display{
+     position: absolute;
+     top: 50%;
+     left: 82%;
+     animation: rotate-ticks 12s linear infinite;
+   }
+   
+   
+   
+   .count-down {
+     height: 60px;
+     width: 150px;
+     overflow: hidden;
+     font-size: 50px;
+     font-weight: 700;
+     position: absolute;
+     color: white;
+     right: 60px;
+     top: 200px;
+     text-align: center;
+   }
+ 
+ 
+   .tick {
+     position: absolute;
+     width: 7px;
+     height: 16px;
+     background-color: white;
+     top: 40%;
+     left: 50%;
+     transform-origin: bottom center;
+     border-radius: 10px;
+   }
+   
+   
+   .ticks {
+     position: relative;
+     width: 210px;
+     height: 210px;
+     border-radius: 50%;
+     /* background-color: aqua; */
+     transform: rotate(-60deg);
+     
+   }
+   
+   .tick1{
+     top: 0;
+   }
+   
+   
+   .tick2 {
+     /* top: 10px;
+     left: 137px; */
+   
+     top: 11px;
+       left: 141px;
+   }
+   
+   .tick3 {
+     /* top: 35px;
+     left: 163px; */
+   
+     top: 43px;
+       left: 175px;
+   }
+   
+   .tick4{
+     /* top: 80px;
+     left: 177px; */
+   
+     left: 91%;
+       top: 46%;
+   }
+   
+   
+   .tick5 {
+     /* top: 122px;
+     left: 165px; */
+   
+     top: 138px;
+     left: 175px;
+   }
+   
+   .tick6 {
+     top: 168px;
+     left: 142px;
+   }
+   
+   
+   .tick7{
+     background-color: rgb(160, 56, 19);
+     /* top: 160px; */
+     width: 8px;
+     height: 25px;
+   
+     top: 170px;
+   }
+ 
+   @keyframes rotate-ticks {
+     0% {
+       transform: rotate(0deg);
+     }
+     8.33% {
+       transform: rotate(-30deg); /* Rotate by 1 tick (30°) */
+     }
+     16.66% {
+       transform: rotate(-60deg); /* Rotate by 2 ticks */
+     }
+     25% {
+       transform: rotate(-90deg); /* Rotate by 3 ticks */
+     }
+     33.33% {
+       transform: rotate(-120deg); /* Rotate by 4 ticks */
+     }
+     41.66% {
+       transform: rotate(-150deg); /* Rotate by 5 ticks */
+     }
+     50% {
+       transform: rotate(-180deg); /* Rotate by 6 ticks */
+     }
+     58.33% {
+       transform: rotate(-210deg); /* Rotate by 7 ticks */
+     }
+     66.66% {
+       transform: rotate(-240deg); /* Rotate by 8 ticks */
+     }
+     75% {
+       transform: rotate(-270deg); /* Rotate by 9 ticks */
+     }
+     83.33% {
+       transform: rotate(-300deg); /* Rotate by 10 ticks */
+     }
+     91.66% {
+       transform: rotate(-330deg); /* Rotate by 11 ticks */
+     }
+     100% {
+       transform: rotate(-360deg); /* Full rotation (12 ticks) */
+     }
+   }
+   
+ 
+   #multiplier-value{
+     height: 60px;
+     width: 150px;
+     overflow: hidden;
+     font-size: 50px;
+     font-weight: 700;
+     position: absolute;
+     color: white;
+     right: 60px;
+     top: 200px;
+     opacity: 0.6;
+   }
+ 
+   .outer-crash{
+     position: relative;
+   }
+   
+ 
+   
+    
+ 
+ 
+ 
+ 
+ 
+ 
+   .number-button{
+     width: 70px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+     border: 3px solid transparent;
+   }
+ 
+   @media (max-width: 1024px) {
+   
+   .terms{
+     display: block;
+   }
+ 
+  
+    
+ }
+ 
+ 
+ @media screen and (max-width: 768px) {
+   .betting-table{
+   width: 100%;
+   top: 50rem;
+   font-size: 12px;
+   /* bottom: 0; */
+   
+   /* display: none; */
+   /* order: 3 !important; */
+   }
+  
+  .curve{
+   top:-8rem;
+   width: 25rem;
+  }
+  
+   
+ 
+   .history{
+     width: 95%;
+     z-index: 1 ;
+     margin-left: 2.5%;
+     margin-top: 22rem;
+     font-size: 12px;
+     
+     
+     /* display: none; */
+   }
+   .midcom{
+     order: 3 !important;
+   }
+ 
+ .crash-container{
+   width: 100%;
+   height: 100%;
+   margin: 0 auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 100px;
+   /* order: 1 !important; */
+ }
+ 
+ .crash-container .outer-crash{
+   width: 95%;
+   height: 95%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ } 
+ 
+ .stake{
+   
+ margin-left: 0px;
+ 
+ }
+ 
+ .mountains{
+   width: 100%;
+   height: 100%;
+ }
+ 
+ #multiplier-value{
+   top: 60%;
+   right: 2%;
+ }
+ 
+ .count-down{
+   top: 60%;
+   right: 2%;
+ }
+ 
+ .countdown-display{
+   top: 60%;
+   right: 80%;
+ }
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ }
+ 
+ @media screen and (max-width: 480px) {  
+   .betting-table{
+     width: 100%;
+   }
+ }
+ 
+ @media screen and (max-width: 320px) {
+   .betting-table{
+     width: 100%;
+   }
+ }
+ 
+ @media screen and (max-width: 280px) {
+   .betting-table{
+     width: 100%;
+   }
+ }
+ 
+ @media screen and (max-width: 240px) {
+   .betting-table{
+     width: 100%;
+   }
+ }
+ 
+ @media screen and (max-width: 200px) {
+   .betting-table{
+     width: 100%;
+   }
+ }
+
+
+
+
+
+
+
+
+
+
