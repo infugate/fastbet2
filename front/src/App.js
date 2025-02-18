@@ -87,7 +87,7 @@ import Matka from './Pages/Dashboard/Matka/Matka';
 import MatkaWinner from './Pages/Dashboard/Matka/MatkaWinner';
 import { Aviator } from './Pages/Dashboard/Avaitor/Avaitor';
 import Papu from './Pages/Dashboard/Titli/Papu';
-
+import AndharBhar from './Pages/Dashboard/AndharBhar/AndharBhar';
 function App() {
   
   return (
@@ -118,6 +118,7 @@ function App() {
           <Route path='/dashboard/matkaWinner' element={<MatkaWinner />} />
           <Route path='/dashboard/avaitor' element={<Aviator />} />
           <Route path='/dashboard/titli' element={<Papu/>} />
+          <Route path='/dashboard/andrbhr' element={<AndharBhar/>} />
         </Routes>
       </div>
     </ProfileProvider>

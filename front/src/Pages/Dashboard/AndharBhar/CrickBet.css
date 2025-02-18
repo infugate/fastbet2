@@ -1,0 +1,394 @@
+.live-video {
+  width: 850px;
+  overflow: hidden;
+  border-radius: 5px;
+  margin-right: 15px;
+  margin-left: 11px;
+}
+
+.video-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgb(82, 100, 152);
+  color: white;
+  height: 30px;
+  font-size: 12px;
+}
+
+.live-video-betting-section {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin-top: 9px;
+}
+
+.my-bet-data {
+  position: sticky;
+  top: 30px;
+}
+
+.my-bet-text , .place-bet-header {
+  width: 628px;
+  height: 30px;
+  background-color: rgb(82, 100, 152);
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  padding-left: 10px;
+  font-size: 12px;
+  color: white;
+  top: 0;
+  border-radius: 5px 5px 0 0;
+}
+
+.bet-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  text-align: left;
+  border-radius: 0 0 5px 5px;
+  overflow: hidden;
+}
+
+.bet-table thead {
+  color: black;
+}
+
+.bet-table th,
+.bet-table td {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+}
+
+.bet-table tbody tr {
+  background-color: #f9f9f9;
+}
+
+.bet-table tbody tr:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.runs {
+  background-color: rgb(82, 100, 152);
+  width: 842px;
+  height: 30px;
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  padding-left: 10px;
+  font-size: 12px;
+  color: white;
+  border-radius: 5px 5px 0 0;
+  margin-top: 10px;
+}
+
+.runs-table {
+  display: flex; /* Flexbox container */
+  justify-content: space-between; /* Space between tables */
+  align-items: flex-start; /* Align tables to the top */
+  gap: 2px; /* Set the gap between tables to 2px */
+  width: 100%;
+}
+
+.runs-table table {
+  flex: 1; /* Make tables flexible */
+  max-width: 100%; /* Ensure each table takes up to 30% of the row */
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.runs-table thead {
+  background-color: rgb(82, 100, 152);
+  color: white;
+  font-size: 10px; /* Decrease font size for the table header */
+}
+
+.runs-table th,
+.runs-table td {
+  padding: 4px 8px; /* Reduced padding */
+  text-align: center;
+  border: 1px solid #ddd;
+  font-size: 12px; /* Decrease font size for table data */
+}
+
+.runs-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.runs-table tbody tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+.runs-table tbody tr:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.runs-table td div {
+  white-space: nowrap; /* Prevent text from wrapping onto the next line */
+  overflow: hidden; /* Hide any overflowing text */
+  text-overflow: ellipsis; /* Add ellipsis if the text overflows */
+}
+
+.runs-table th:nth-child(2) {
+  background-color: rgb(114, 187, 239); /* Blue background for the Back column header */
+  color: black; /* White text color */
+}
+
+/* Style the "Back" column cells */
+.runs-table td:nth-child(2) {
+  background-color: rgb(114, 187, 239); /* Light blue background for the Back column cells */
+}
+
+
+.instruction {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  overflow: hidden; 
+  background-color: rgb(8, 111, 63);
+  border-radius: 5px;
+  font-size:12px;
+  color: white;
+  margin-top: 10px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+   /* Apply animation here */
+}
+
+.messege-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px; 
+  width: 50px;
+  height: 40px;
+  z-index: 1;
+  background-color: rgb(8, 111, 63);
+  font-size: 25px;
+}
+
+.message-text {
+  white-space: nowrap;
+  animation: scroll-animation 17s linear infinite;
+}
+
+@keyframes scroll-animation {
+  0% {
+    transform: translateX(120%); /* Start position is off the screen to the right */
+  }
+  100% {
+    transform: translateX(-100%); /* End position is off the screen to the left */
+  }
+}
+
+.last-reasult{
+  position: relative;
+}
+
+.last-reasult-header{
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgb(82, 100, 152);
+  color: white;
+  height: 30px;
+  font-size: 12px;
+  width: 97%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.ball-div {
+  width: 100%;
+  margin-top: 5px;
+  display: flex;
+  justify-content: end;
+  margin-bottom: 50px;
+  
+  
+}
+
+.ball-div div {
+  display: flex;
+  gap: 3px;
+}
+
+.ball{
+  background-color: green;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #bac33b;
+}
+.right-sidebar{
+  position: relative;
+}
+.place-bet{
+  margin-bottom: 10px;
+}
+.place-bet-header2{
+  width: 99%;
+  height: 25px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.692);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+.place-bet-data{
+  height: 40px;
+  width: 99% ;
+  padding: 5px;
+  font-size: 13px;
+  background-color: rgb(114, 187, 239);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.place-bet-data input{
+  width: 100px;
+  height: 25px;
+}
+.place-bet-stake-buttons{
+  width: 628px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 5px;
+  background-color: rgb(114, 187, 239);
+  border-top: 1px solid black;
+}
+.place-bet-stake-buttons button{
+  height: 40px;
+  width: 70px;
+  border: 0;
+  border-radius: 4px;
+  background-color: rgba(211, 204, 204, 0.833);
+}
+.place-bet-buttons{
+  background-color: rgb(114, 187, 239);
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.place-bet-buttons button{
+  height: 40px;
+  width: 70px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.place-bet-buttons div{
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit {
+  background-color: rgb(9, 124, 147);
+}
+
+.reset{
+  background-color: rgba(255, 0, 0, 0.79);
+}
+
+.submit{
+  background-color:rgb(56, 153, 138) ;
+}
+
+.right-sidebar {
+    width: 42%;
+  position: sticky;
+  top: 0;
+  height: 100vh; /* Ensure it spans the full viewport height */
+  overflow-y: auto; /* Add scroll for content if it overflows */
+   /* Match the current sidebar width */
+}
+.right-sidebar-for-mobile{
+display: none;
+}
+
+@media (max-width: 480px) {
+.main-div {
+  width: 100%; /* Make the main div fit the screen */
+  margin: 0; /* Remove any default margins */
+  padding: 0; /* Remove any default padding */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+.live-video {
+  width: 100%; /* Adjust video to fit the screen width */
+  border-radius: 5px;
+  margin-right: 0;
+  margin-left: 0px;
+}
+.sidebar-div ,.right-sidebar {
+  display: none; /* Hide sidebar on small screens */
+}
+.video-header {
+  font-size: 12px;
+}
+
+.runs-table{
+  display: flex;
+  flex-direction: column;
+  
+}
+.runs-table table{
+  
+  width: 100%;
+  
+}
+
+
+.message-text h3 {
+  white-space: nowrap;
+  animation: scroll-animation 25s linear infinite;
+}
+
+
+
+.right-sidebar-for-mobile{
+  display: block;
+  width: 100%;
+  
+  margin-top: 10px;
+  
+  
+  
+}
+
+.place-bet-header{
+width: 100%;
+}
+
+.place-bet-stake-buttons{
+width: 100%;
+}
+
+.my-bet-text{
+width: 100%;
+}
+}

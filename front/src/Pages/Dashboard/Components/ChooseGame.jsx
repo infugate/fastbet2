@@ -70,6 +70,7 @@ const gameOptions = [
   { id: 2, name: "Matka", icon: <GiCardAceHearts />, link: "/dashboard/matka" },
   { id: 3, name: "Avaitor", icon: <FaDice />, link: "/dashboard/avaitor" },
   { id: 4, name: "Titli", icon: <FaDice />, link: "/dashboard/titli" },
+  { id: 5, name: "Andhar Bhar", icon: <FaDice />, link: "/dashboard/andrbhr" },
 ];
 
 const ChooseGame = () => {

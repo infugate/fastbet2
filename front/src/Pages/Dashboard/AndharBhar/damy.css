@@ -1,0 +1,143 @@
+.andhar-table,.bahar-table{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.andar-containor-bhar {
+  background: linear-gradient(to right, #a13800d6, #79c5cd);
+  
+  color: #fff; 
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+
+.andhar-table table, .bahar-table table {
+    width: 1141px; 
+    height: 80px;
+    margin: -5px auto;
+    border-collapse: collapse;
+  }
+  
+  
+  .andhar-table table, .bahar-table table, td {
+    border: none;
+  }
+  
+ 
+  .andhar-table td, .bahar-table td {
+    width: 50px;
+    height: 100px; 
+    padding: 5px;
+    text-align: center;
+    vertical-align: middle; 
+  }
+  
+
+  .andhar-table td.empty, .bahar-table td.empty {
+    background-color: transparent; 
+  }
+  
+
+  .andhar-table td img, .bahar-table td img {
+    width: 100%;  
+    height: auto;  
+    display: block;  
+  }
+  
+ 
+  .andhar-table td img.highlight, .bahar-table td img.highlight {
+    border: 2px solid yellow;
+  }
+  
+  .center-card img {
+    width: 100px;
+    margin: 20px 0;
+    border: 5px solid #fff;
+    transition: border 0.5s ease-in-out;
+  }
+ 
+ .winner{
+    color: #fff;
+    background: linear-gradient(to right, rgba(125, 77, 221, 0.801), #d331b8);
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .winner2{
+    color: #fff;
+    background: linear-gradient(to right, rgba(166, 212, 101, 0.801), #a846c0);
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .andrbtn{
+    background-color: #444;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .andrbtn:hover {
+    background-color: #555;
+  }
+  
+  .battingseystem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tablebharcontainor{
+    background: linear-gradient(to right, rgb(239 114 114 / 68%), #79c5cd);
+  }
+
+
+
+  
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .andhar-table table, .bahar-table table {
+    width: 100%; /* Scale table to fit screen */
+    height: auto; /* Adjust height dynamically */
+  }
+
+  .andhar-table td, .bahar-table td {
+    width: 7%; /* Adjust cell width proportionally */
+    height: auto; /* Maintain responsive height */
+    padding: 3px; /* Reduce padding for smaller screens */
+  }
+
+  .andhar-table td img, .bahar-table td img {
+    width:150%; /* Fit card images within cells */
+    height: 120%; /* Maintain aspect ratio */
+  }
+
+  .center-card img {
+    width: 70px; /* Reduce Joker card size */
+    margin: 10px 0;
+  }
+
+  .winner, .winner2 {
+    font-size: 14px; /* Adjust text size */
+    height: 50px; /* Reduce height */
+  }
+
+  .andrbtn {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+}
+
+   
