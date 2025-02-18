@@ -360,7 +360,7 @@ if (userData) {
 
   return (
     <MainContainer>
-    <Title>Titli Par</Title>
+    <Title>Titli Patta</Title>
   
     <FlexContainer>
       {/* Game Section */}
