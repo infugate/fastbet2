@@ -69,7 +69,7 @@ const gameOptions = [
   { id: 1, name: "Cricket", icon: <FaTrophy />, link: "/dashboard/cricket" },
   { id: 2, name: "Matka", icon: <GiCardAceHearts />, link: "/dashboard/matka" },
   { id: 3, name: "Avaitor", icon: <FaDice />, link: "/dashboard/avaitor" },
-  { id: 4, name: "Titli", icon: <FaDice />, link: "/dashboard/titli" },
+  { id: 4, name: "Titli Patta", icon: <FaDice />, link: "/dashboard/titli" },
   { id: 5, name: "Andhar Bhar", icon: <FaDice />, link: "/dashboard/andrbhr" },
 ];
 
