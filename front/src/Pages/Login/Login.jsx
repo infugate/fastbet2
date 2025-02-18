@@ -42,11 +42,11 @@ const Login = () => {
   return (
     <RegistrationPageWrapper>
       <LeftContainer>
-        <Logo src={fastbetLogo} alt="Shri Matka Logo" />
+        <Logo src={fastbetLogo} alt="98Fastbet Logo" />
         <DownloadButton>
           For Better Experience
           <br />
-          Download Shri Matka App
+          Download 98Fastbet App
         </DownloadButton>
 
         <SubHeading>Login with Email Id</SubHeading>

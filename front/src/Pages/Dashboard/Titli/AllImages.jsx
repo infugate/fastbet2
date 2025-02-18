@@ -1,6 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-const AllImages = ({ allWinningImages = [], highlightedImages = [], selectedImages = [], betAmount = 10, onImageClick, isTimerActive}) => {
+
+const AllImages = ({
+  allWinningImages = [],
+  highlightedImages = [],
+  selectedImages = [],
+  betAmount = 10,
+  onImageClick,
+  disabled = false, // When false, images are enabled; true disables them.
+}) => {
   return (
     <Container>
       <ImageGrid>
@@ -10,16 +18,16 @@ const AllImages = ({ allWinningImages = [], highlightedImages = [], selectedImag
             highlighted={highlightedImages.includes(image)}
             selected={selectedImages.includes(image)}
             onClick={() => {
-              if (isTimerActive) {
+              if (!disabled) {
                 onImageClick(image);
               }
             }}
-            isTimerActive={isTimerActive}
+            disabled={disabled}
           >
             {selectedImages.includes(image) && (
               <BetAmountOverlay>₹{betAmount}</BetAmountOverlay>
             )}
-            <StyledImage src={`/${image}`} alt="Winning Card" isTimerActive={isTimerActive} />
+            <StyledImage src={`/${image}`} alt="Winning Card" disabled={disabled} />
           </ImageWrapper>
         ))}
       </ImageGrid>
@@ -34,7 +42,8 @@ const Container = styled.div`
   width: 100%;
   max-width: 500px;
   margin: 16px auto;
-  padding: 8px;
+  box-sizing:border-box;
+  padding: 2px;
   border: 2px solid white;
   background-color: #1a202c;
   border-radius: 8px;
@@ -44,7 +53,11 @@ const Container = styled.div`
 const ImageGrid = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 5px;
+  width:100%;
+  margin:auto;
+  // background:red;
+  justify-content:center
 `;
 
 const ImageWrapper = styled.div`
@@ -54,9 +67,16 @@ const ImageWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 4px solid ${props => (props.highlighted ? "#FFD700" : props.selected ? "#1E90FF" : "transparent")};
+  border: 4px solid
+  ${(props) =>
+      props.highlighted ? "#FFD700" : props.selected ? "#1E90FF" : "transparent"};
   border-radius: 8px;
-  cursor: ${props => (props.isTimerActive ? "pointer" : "not-allowed")};
+  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
+ @media (max-width: 739px) {
+   width: 45px;
+  height: 45px;
+  }
+ 
 `;
 
 const BetAmountOverlay = styled.div`
@@ -76,6 +96,6 @@ const StyledImage = styled.img`
   height: 100%;
   object-fit: cover;
   border-radius: 6px;
-  filter: ${props => (!props.isTimerActive ? "grayscale(100%)" : "none")};
-  opacity: ${props => (!props.isTimerActive ? 0.8 : 1)};
+  filter: ${(props) => (props.disabled ? "grayscale(100%)" : "none")};
+  opacity: ${(props) => (props.disabled ? 0.8 : 1)};
 `;

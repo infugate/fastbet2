@@ -4,7 +4,7 @@ import axios from 'axios';
 const ProfileContext = createContext();
 
 export const ProfileProvider = ({ children }) => {
-    const [profile, setProfile] = useState({ username: 'Demo', walletBalance: 0, email: "" });
+    const [profile, setProfile] = useState({ username: 'Demo', walletBalance: 0, email: "" ,userId:"" });
 
     const fetchNameWallet = async () => {
         const userData = localStorage.getItem('user');
@@ -19,7 +19,8 @@ export const ProfileProvider = ({ children }) => {
             setProfile({
                 username: res.data.username,
                 walletBalance: res.data.walletBalance,
-                email: res.data.email
+                email: res.data.email,
+                userId : id
             });
         } catch (err) {
             console.error('Error fetching profile:', err);

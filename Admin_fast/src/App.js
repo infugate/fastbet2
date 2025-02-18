@@ -81,7 +81,7 @@ import CreateUser from "./scenes/CreateUser";
 import Events from "./scenes/Events";
 import Cricket from "./scenes/Cricket";
 import Login from "./scenes/Login"; // Import the Login page
-
+import Titli from "./scenes/Titli";
 function App() {
   const [theme, colorMode] = useMode();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -117,6 +117,7 @@ function App() {
                   <Route path="/payment" element={<Payment />} />
                   <Route path="/event" element={<Events />} />
                   <Route path="/cricket" element={<Cricket />} />
+                  <Route path="/titli" element={<Titli/>} />
                   <Route path="*" element={<Navigate to="/" />} />
                 </Routes>
               </main>

@@ -65,7 +65,7 @@ const RegistrationPage = () => {
         <DownloadButton>
           For Better Experience
           <br />
-          Download Shri Matka App
+          Download 98Fastbet App
         </DownloadButton>
 
         <SubHeading>Create your account</SubHeading>

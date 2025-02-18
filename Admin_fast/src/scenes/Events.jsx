@@ -1,122 +1,128 @@
-import React from "react";
-import "./Events.css";
 
-const EventTables = () => {
-  const upcomingEvents = [
-    { date: "2025-02-15", event: "Tech Conference 2025", location: "San Francisco" },
-    { date: "2025-03-10", event: "Product Launch", location: "New York" },
-  ];
 
-  const liveEvents = [
-    { startTime: "12:00 PM", event: "Live Coding Session", status: "Ongoing" },
-    { startTime: "3:00 PM", event: "Webinar on AI", status: "Ongoing" },
-  ];
+import React, { useState, useEffect } from "react";
+import { Box, TextField, Button, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Dialog, DialogTitle, DialogContent, DialogActions, CircularProgress } from "@mui/material";
+import axios from "axios";
 
-  const upcomingMatches = [
-    { date: "2025-02-20", time:'15:35 PM ', match: "Team A vs Team B", createEvent: "Create" },
-    { date: "2025-02-25", time:'25:35 AM ', match: "Team C vs Team D", createEvent: "Create" },
-  ];
+function Contact() {
+  const [marketData, setMarketData] = useState([]);
+  const [openDialog, setOpenDialog] = useState(false);
+  const [selectedMarket, setSelectedMarket] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  const fetchGameData = async () => {
+   
+    try {
+      const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/subscription-state`);
+      const data = response.data;
+      setMarketData(data.scrapedData.markets); // Update the games data
+    } catch (err) {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false); // Stop loading after fetching data
+    }
+  };
+
+  useEffect(() => {
+    // Fetch data immediately when the component mounts
+    fetchGameData();
+
+    // Set up polling to fetch data every minute (60000 ms)
+    const intervalId = setInterval(fetchGameData, 60000);
+
+    // Cleanup interval on component unmount to avoid memory leaks
+    return () => clearInterval(intervalId);
+  }, []); // Empty dependency array ensures this runs only once on mount
+
+  const handleClose = () => {
+    setOpenDialog(false);
+    setSelectedMarket(null);
+  };
+
+  const handleChange2 = (e) => {
+    const { name, value } = e.target;
+    setSelectedMarket((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSave = () => {
+    setOpenDialog(false); // Close the dialog after saving
+  };
 
   return (
-    <div className="grid gap-6 mt-12 grid-cols-12">
-      {/* Upcoming Events Table */}
-      <div className="card col-span-6">
-        <div className="card-header upcoming text-white p-4">UPCOMING EVENT</div>
-        <div className="card-body p-4">
-          <table className="event-table">
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Event</th>
-                <th>Location</th>
-              </tr>
-            </thead>
-            <tbody>
-              {upcomingEvents.length > 0 ? (
-                upcomingEvents.map((event, index) => (
-                  <tr key={index}>
-                    <td>{event.date}</td>
-                    <td>{event.event}</td>
-                    <td>{event.location}</td>
-                  </tr>
-                ))
-              ) : (
-                <tr className="no-event">
-                  <td colSpan="3">No Upcoming Event found</td>
-                </tr>
-              )}
-            </tbody>
-          </table>
-        </div>
-      </div>
+    <>
+      <Box sx={{ padding: 3, backgroundColor: "#000b31d6", borderRadius: 2, color: "white", width: "100%", margin: "auto" }}>
+        <Typography variant="h4" gutterBottom align="center">Live Markets</Typography>
 
-      {/* Live Events Table */}
-      <div className="card col-span-6">
-        <div className="card-header live text-white p-4">LIVE EVENT</div>
-        <div className="card-body p-4">
-          <table className="event-table">
-            <thead>
-              <tr>
-                <th>Start Time</th>
-                <th>Event</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              {liveEvents.length > 0 ? (
-                liveEvents.map((event, index) => (
-                  <tr key={index}>
-                    <td>{event.startTime}</td>
-                    <td>{event.event}</td>
-                    <td>{event.status}</td>
-                  </tr>
-                ))
-              ) : (
-                <tr className="no-event">
-                  <td colSpan="3">No Live Event found</td>
-                </tr>
-              )}
-            </tbody>
-          </table>
-        </div>
-      </div>
+        {/* Show loading spinner if data is still being loaded */}
+        {loading ? (
+          <Box sx={{ display: "flex", justifyContent: "center", padding: 2 }}>
+            <CircularProgress sx={{ color: "white" }} />
+          </Box>
+        ) : (
+          <TableContainer component={Paper} sx={{ backgroundColor: "#1a237e", color: "white", minHeight: 200, maxHeight: marketData.length > 8 ? 400 : 'auto', overflowY: marketData.length > 8 ? "scroll" : "hidden" }}>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCell sx={{ color: "white" }}>Market Name</TableCell>
+                  <TableCell sx={{ color: "white" }}>Open Number</TableCell>
+                  <TableCell sx={{ color: "white" }}>Jodi Digit</TableCell>
+                  <TableCell sx={{ color: "white" }}>Close Number</TableCell>
+                  <TableCell sx={{ color: "white" }}>Open Time</TableCell>
+                  <TableCell sx={{ color: "white" }}>Close Time</TableCell>
+                  <TableCell sx={{ color: "white" }}>Close Status</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {marketData.length > 0 ? (
+                  marketData.map((market, index) => (
+                    <TableRow key={index}>
+                      <TableCell sx={{ color: "white" }}>{market.marketName}</TableCell>
+                      <TableCell sx={{ color: "white" }}>{market.openNumber}</TableCell>
+                      <TableCell sx={{ color: "white" }}>{market.jodiDigit}</TableCell>
+                      <TableCell sx={{ color: "white" }}>{market.closeNumber}</TableCell>
+                      <TableCell sx={{ color: "white" }}>{market.openTime}</TableCell>
+                      <TableCell sx={{ color: "white" }}>{market.closeTime}</TableCell>
+                      <TableCell sx={{ color: "white" }}>{market.bidStatus}</TableCell>
+                    </TableRow>
+                  ))
+                ) : (
+                  <TableRow>
+                    <TableCell colSpan={7} align="center" sx={{ color: "white" }}>No records found</TableCell>
+                  </TableRow>
+                )}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        )}
 
-      {/* Upcoming Cricket Matches Table */}
-      <div className="card col-span-12">
-        <div className="card-header upcoming text-white p-4">UPCOMING CRICKET MATCH</div>
-        <div className="card-body match-box">
-          <table className="event-table">
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Match</th>
-                <th>Create Event</th>
-              </tr>
-            </thead>
-            <tbody>
-              {upcomingMatches.length > 0 ? (
-                upcomingMatches.map((match, index) => (
-                  <tr key={index}>
-                    <td>{match.date}</td>
-                    <td>{match.time}</td>
-                    <td>{match.match}</td>
-                    <td>
-                      <button className="create-event-btn">{match.createEvent}</button>
-                    </td>
-                  </tr>
-                ))
-              ) : (
-                <tr className="no-event">
-                  <td colSpan="4">No Upcoming Matches found</td>
-                </tr>
-              )}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+        {/* Update Dialog */}
+        <Dialog open={openDialog} onClose={handleClose}>
+          <DialogTitle>Update Market Details</DialogTitle>
+          <DialogContent>
+            {selectedMarket && (
+              <>
+                <TextField fullWidth margin="dense" label="Market Name" name="marketName" value={selectedMarket.marketName} onChange={handleChange2} />
+                <TextField fullWidth margin="dense" label="Open Number" name="openNumber" value={selectedMarket.openNumber} onChange={handleChange2} />
+                <TextField fullWidth margin="dense" label="Jodi Digit" name="jodiDigit" value={selectedMarket.jodiDigit} onChange={handleChange2} />
+                <TextField fullWidth margin="dense" label="Close Number" name="closeNumber" value={selectedMarket.closeNumber} onChange={handleChange2} />
+                <TextField fullWidth margin="dense" label="Open Time" name="openTime" value={selectedMarket.openTime} onChange={handleChange2} />
+                <TextField fullWidth margin="dense" label="Close Time" name="closeTime" value={selectedMarket.closeTime} onChange={handleChange2} />
+                <TextField fullWidth margin="dense" label="Close Status" name="closeStatus" value={selectedMarket.closeStatus} onChange={handleChange2} />
+              </>
+            )}
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose} color="secondary">Cancel</Button>
+            <Button onClick={handleSave} color="primary">Save</Button>
+          </DialogActions>
+        </Dialog>
+      </Box>
+    </>
   );
-};
+}
 
-export default EventTables;
+export default Contact;

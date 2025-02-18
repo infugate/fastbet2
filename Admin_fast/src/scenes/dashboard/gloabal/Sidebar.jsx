@@ -144,7 +144,7 @@ function Sidebar() {
                     fontWeight="bold"
                     sx={{ m: "10px 0 0 0" }}
                   >
-                  {localStorage.getItem("email")}
+                    {localStorage.getItem("email")}
                   </Typography>
                   <Typography
                     variant="h5"
@@ -161,7 +161,7 @@ function Sidebar() {
 
 
             <Box paddingLeft={isCollapsed ? undefined : "10%"}>
-            <Typography
+              <Typography
                 variant="h6"
                 color={colors.grey[300]}
                 sx={{ m: "15px 0px 5px 20px" }}
@@ -175,14 +175,14 @@ function Sidebar() {
                 selected={selected}
                 setSelected={setSelected}
               />
-               <Item
-                title="Events"
+              <Item
+                title="Live Market"
                 to="/event"
                 icon={<EventIcon />}
                 selected={selected}
                 setSelected={setSelected}
               />
-              
+
               <Item
                 title="Matka"
                 to="/matka"
@@ -190,9 +190,16 @@ function Sidebar() {
                 selected={selected}
                 setSelected={setSelected}
               />
-                <Item
+              <Item
                 title="Cricket"
                 to="/cricket"
+                icon={<PeopleOutlinedIcon />}
+                selected={selected}
+                setSelected={setSelected}
+              />
+              <Item
+                title="Titli Par"
+                to="/titli"
                 icon={<PeopleOutlinedIcon />}
                 selected={selected}
                 setSelected={setSelected}
@@ -204,7 +211,7 @@ function Sidebar() {
                 selected={selected}
                 setSelected={setSelected}
               />
-             
+
               {/* <Item
                 title="Admin form"
                 to="/form"
@@ -212,14 +219,14 @@ function Sidebar() {
                 selected={selected}
                 setSelected={setSelected}
               /> */}
-                <Item
+              <Item
                 title="Create User"
                 to="/form2"
                 icon={<PersonOutlinedIcon />}
                 selected={selected}
                 setSelected={setSelected}
               />
-                <Item
+              <Item
                 title="Payment"
                 to="/payment"
                 icon={<PaymentOutlinedIcon />}
@@ -233,7 +240,7 @@ function Sidebar() {
                 selected={selected}
                 setSelected={setSelected}
               />
-                <Item
+              <Item
                 title="Invoices Balances"
                 to="/invoices"
                 icon={<ReceiptOutlinedIcon />}
@@ -247,7 +254,7 @@ function Sidebar() {
                 selected={selected}
                 setSelected={setSelected}
               />
-             
+
               <Item
                 title="Pie Chart"
                 to="/pie"
@@ -255,7 +262,7 @@ function Sidebar() {
                 selected={selected}
                 setSelected={setSelected}
               />
-            
+
             </Box>
           </Menu>
         </MySidebar>
